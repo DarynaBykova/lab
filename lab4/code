@@ -1,0 +1,61 @@
+from dataclasses import dataclass
+
+@dataclass
+class TypeOfMainAssets:
+    code: int
+    type: str
+    unit: str
+    output: int
+
+@dataclass
+class MoveOfMainAssets:
+    name: int
+    code: str
+    remainder: str
+    received: str
+    output: str
+    year: int
+
+type_array = []
+type_array.append(TypeOfMainAssets(50, "картопля", "кг", 39))
+type_array.append(TypeOfMainAssets(60, "капуста", "кг", 32))
+type_array.append(TypeOfMainAssets(70, "цибуля", "кг", 40))
+type_array.append(TypeOfMainAssets(80, "мед", "кг", 450))
+type_array.append(TypeOfMainAssets(90, "часник", "кг", 250))
+type_array.append(TypeOfMainAssets(100, "яблука", "кг", 60))
+
+move_array = []
+move_array.append(MoveOfMainAssets(50, '36,6', '35,7', '38,3', '38,3', 2013))
+move_array.append(MoveOfMainAssets(50, '40,0', '40,0', '40,0', '40,0', 2014))
+move_array.append(MoveOfMainAssets(50, '40,0', '45,0', '45,0', '43,0', 2015))
+move_array.append(MoveOfMainAssets(60, '30,8', '30,7', '3,3', '35,0', 2013))
+move_array.append(MoveOfMainAssets(60, '35,0', '35,4', '36,0', '36,5', 2014))
+move_array.append(MoveOfMainAssets(60, '36,5', '35,0', '35,0', '36,0', 2015))
+move_array.append(MoveOfMainAssets(70, '50,8', '45,0', '49,2', '51,6', 2013))
+move_array.append(MoveOfMainAssets(70, '50,5', '52,0', '51,6', '52,2', 2014))
+move_array.append(MoveOfMainAssets(70, '52,2', '55,0', '54,3', '55,0', 2015))
+move_array.append(MoveOfMainAssets(80, '880,0', '933,3', '920.0', '983,3', 2013))
+move_array.append(MoveOfMainAssets(80, '990,0', '995,0', '1000,0', '1000,0', 2014))
+move_array.append(MoveOfMainAssets(80, '1000,0', '1005,0', '1005,0', '1005,0', 2015))
+move_array.append(MoveOfMainAssets(90, '265,0', '264,2', '288,2', '305,5', 2013))
+move_array.append(MoveOfMainAssets(90, '310,2', '310,2', '312,5', '313,4', 2014))
+move_array.append(MoveOfMainAssets(90, '313,4', '315,2', '316,5', '316,5', 2015))
+move_array.append(MoveOfMainAssets(100, '67,5', '72,8', '68,0', '86,6', 2013))
+move_array.append(MoveOfMainAssets(100, '86,5', '86,5', '88,2', '88,2', 2014))
+move_array.append(MoveOfMainAssets(100, '89,5', '90,5', '95,6', '95,6', 2015))
+
+def printMoveOfMainAssets(moveOfMainAssets):
+
+    print("Код товару: {name}, на 2.11: {code}, на 10.11: {remainder}, на 14.11: {received}, на 24.11: {output}, Рік: {year}"
+          .format(name=moveOfMainAssets.name, code=moveOfMainAssets.code, remainder=moveOfMainAssets.remainder,
+                  received=moveOfMainAssets.received, output=moveOfMainAssets.output, year=moveOfMainAssets.year))
+for data in move_array:
+    printMoveOfMainAssets(data)
+
+def printTypeOfMainAssets(typeOfMainAssets):
+
+    print("Код товару: {code}, Найменування товару: {type}, Од. виміру: {unit}, Роздрібна ціна: {output}"
+            .format(code=typeOfMainAssets.code, type=typeOfMainAssets.type, unit=typeOfMainAssets.unit, output=typeOfMainAssets.output))
+
+for data in type_array:
+    printTypeOfMainAssets(data)
