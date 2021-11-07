@@ -1,0 +1,3 @@
+n=11
+name="frog "
+print(name*n)
