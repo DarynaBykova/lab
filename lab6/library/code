@@ -13,11 +13,9 @@ class Library(object):
 book1 = ("Hiroshima", "John Hersey", "1946", "War Drama")
 book2 = ("Кайдашева сім'я", "Іван Нечуй-Левицький", "1879", "Соціально-побутова повість")
 book3 = ("The Story of Art", "Ernst Hans Gombrich", "1950", "History")
-book4 = ("하늘과 바람과 별과 시", "Yoon Dong Ju", "2003")
+book4 = ("하늘과 바람과 별과시", "Yoon Dong Ju", "2003", "Poesy")
 
-dict = book1, book2, book3, book4
-
-print("Library open ")
+print("Ви відкрили домашню бібліотеку.")
 
 while True:
     print("1. Бібліотека.\n2. Пошук.\n3. Додати книгу до бібліотеки.\n4. Видалити книгу.\n5. Вийти із бібліотеки.\n")
@@ -30,8 +28,66 @@ while True:
         print(book4)
 
     elif userInput == "2":
-        print("Пошук книги за допомогою...\n1. name.\n2. author.\n3. year_of_publication.\n4. genre.\n")
-        userInput1 = str(input())
-
-        if userInput1 == "1":
-            print("ВВедіть дані для пошуку.\n")
+        while True:
+            choice = input("Пошук книги за допомогою...\n1. name.\n2. author.\n3. year_of_publication.\n4. genre.\n")
+            if choice == "1":
+                while True:
+                    choice = input("ВВедіть дані для пошуку.\n")
+                    if choice == 'Hiroshima':
+                        print("Hiroshima, John Hersey, 1946, War Drama")
+                    else:
+                        print("ВВедіть дані для пошуку.")
+                        if choice == "Кайдашева сім'я":
+                            print("Кайдашева сім'я, Іван Нечуй-Левицький, 1879, Соціально-побутова повість")
+                        elif choice == "The Story of Art":
+                            print("The Story of Art, Ernst Hans Gombrich, 1950, History")
+                        elif choice == "하늘과 바람과 별과시":
+                            print("하늘과 바람과 별과시, Yoon Dong Ju, 2003, Poesy")
+            if choice == "2":
+                while True:
+                    choice = input("ВВедіть дані для пошуку.\n")
+                    if choice == "John Hersey":
+                        print("Hiroshima, 1946, War Drama")
+                    else:
+                        print("ВВедіть дані для пошуку.")
+                        if choice == "Іван Нечуй-Левицький":
+                            print("Кайдашева сім'я, 1879, Соціально-побутова повість")
+                        elif choice == "Ernst Hans Gombrich":
+                            print("The Story of Art, 1950, History")
+                        elif choice == "Yoon Dong Ju":
+                            print("하늘과 바람과 별과시, 2003, Poesy")
+            if choice == "3":
+                while True:
+                    choice = input("ВВедіть дані для пошуку.\n")
+                    if choice == "1946":
+                        print("Hiroshima, John Hersey, War Drama")
+                    else:
+                        print("ВВедіть дані для пошуку.")
+                        if choice == "1879":
+                            print("Кайдашева сім'я, Іван Нечуй-Левицький, Соціально-побутова повість")
+                        elif choice == "1950":
+                            print("The Story of Art, Ernst Hans Gombrich, History")
+                        elif choice == "2003":
+                            print("하늘과 바람과 별과시, Yoon Dong Ju, Poesy")
+            if choice == "4":
+                while True:
+                    choice = input("ВВедіть дані для пошуку.\n")
+                    if choice == "War Drama":
+                        print("Hiroshima, John Hersey, 1946")
+                    else:
+                        print("ВВедіть дані для пошуку.")
+                        if choice == "Соціально-побутова повість":
+                            print("Кайдашева сім'я, Іван Нечуй-Левицький, 1879")
+                        elif choice == "History":
+                            print("The Story of Art", "Ernst Hans Gombrich", "1950")
+                        elif choice == "Poesy":
+                            print("하늘과 바람과 별과시", "Yoon Dong Ju", "2003")
+    elif userInput == "3":
+        print("Додайте книгу.")
+        filename = input()
+        print("Операція успішна.")
+    elif userInput == "4":
+        import os
+        os.remove(" C:\\mydoc.doc \\testfile.txt")
+    elif userInput == "5":
+        break
