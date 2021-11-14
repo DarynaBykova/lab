@@ -1,0 +1,37 @@
+class Library(object):
+
+    def __init__(self, name, author, year_of_publication, genre):
+        self.name = name
+        self.author = author
+        self.year_of_publication = year_of_publication
+        self.genre = genre
+
+    def book(self):
+        print(self.name, self.author, self.year_of_publication, self.genre)
+
+
+book1 = ("Hiroshima", "John Hersey", "1946", "War Drama")
+book2 = ("Кайдашева сім'я", "Іван Нечуй-Левицький", "1879", "Соціально-побутова повість")
+book3 = ("The Story of Art", "Ernst Hans Gombrich", "1950", "History")
+book4 = ("하늘과 바람과 별과 시", "Yoon Dong Ju", "2003")
+
+dict = book1, book2, book3, book4
+
+print("Library open ")
+
+while True:
+    print("1. Бібліотека.\n2. Пошук.\n3. Додати книгу до бібліотеки.\n4. Видалити книгу.\n5. Вийти із бібліотеки.\n")
+    userInput = str(input())
+
+    if userInput == "1":
+        print(book1)
+        print(book2)
+        print(book3)
+        print(book4)
+
+    elif userInput == "2":
+        print("Пошук книги за допомогою...\n1. name.\n2. author.\n3. year_of_publication.\n4. genre.\n")
+        userInput1 = str(input())
+
+        if userInput1 == "1":
+            print("ВВедіть дані для пошуку.\n")
