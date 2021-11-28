@@ -1,0 +1,14 @@
+from numpy import *
+import matplotlib.pyplot as plt
+import numpy as np
+import pylab
+text = str("— Карпе! — промовив Лаврін. — А кого ти будеш оце сватать? Адже ж оце перед Семеном тебе батько, мабуть, "
+           "оженить. — Хіба з корчми йдучи...")
+def count_sign():
+    symbols = ["—", "!", ".", ",", "?", "..."]
+    for i in range(0, len(symbols)):
+        xdata = [symbols[i]]
+        ydata = [text.count(symbols[i])]
+        pylab.bar(xdata, ydata)
+    pylab.show()
+count_sign()
